@@ -157,6 +157,29 @@ app.get("/dashboard/recent-entries", authenticateToken, async (req, res) => {
   }
 });
 
+app.get("/entries/:year/:month", authenticateToken, async (req, res) => {
+  const userId = req.user.userId;
+  const { year, month } = req.params;
+
+  try {
+    // Get entries for the specified month and year
+    const entries = await prisma.entry.findMany({
+      where: {
+        userId,
+        date: {
+          gte: new Date(year, month - 1, 1), // Month is 0-indexed in JavaScript Date
+          lt: new Date(year, month, 1),
+        },
+      },
+    });
+
+    res.json(entries);
+  } catch (error) {
+    console.error("Error fetching entries for the specified month:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
 // Create Entry (both income and expense)
 app.post("/entries", authenticateToken, async (req, res) => {
   let { amount, description, date, category } = req.body;
