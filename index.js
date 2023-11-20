@@ -127,6 +127,7 @@ app.get("/dashboard/data", authenticateToken, async (req, res) => {
       currentMonthExpenseTotal,
       currentMonthExpenses,
       currentMonthIncome,
+      currentMonthEntries,
     });
   } catch (error) {
     console.error("Error fetching dashboard data:", error);
@@ -296,7 +297,7 @@ app.delete("/entries/:id", authenticateToken, async (req, res) => {
   }
 });
 
-const PORT = 8080;
+const PORT = 5252;
 app.listen(PORT, () => {
   console.log("Server is running on port: " + PORT);
 });

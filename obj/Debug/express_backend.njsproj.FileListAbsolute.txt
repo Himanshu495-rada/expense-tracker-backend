@@ -1,0 +1,3 @@
+C:\Users\himan\Desktop\Paid Projects\Tejas_Dighe_Project\Expense tracker\Expense tracker backend\obj\Debug\express_backend.njsproj.AssemblyReference.cache
+C:\Users\himan\Desktop\Paid Projects\Tejas_Dighe_Project\Expense tracker\Expense tracker backend\obj\Debug\express_backend.njsproj.CoreCompileInputs.cache
+C:\Users\himan\Desktop\Paid Projects\Tejas_Dighe_Project\Expense tracker\Expense tracker backend\bin\Microsoft.NodejsTools.WebRole.dll
